@@ -1,4 +1,4 @@
-# 🚀 Code in Place 2026 — Full Learning Repository
+# 🚀 Code in Place 2026 — Repository
 
 <p align="center">
   <b>Stanford Code in Place 2026</b><br/>
