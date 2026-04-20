@@ -1,20 +1,27 @@
-# 🚀 Code in Place 2026 – My Learning Journey
+# 🚀 Code in Place 2026 — My Coding Journey
 
-Welcome to my repository for **Stanford Code in Place 2026** 👨‍💻  
+<p align="center">
+  <b>Stanford Code in Place | Learning • Building • Growing</b> 💻✨
+</p>
 
-This repo is a collection of everything I learn throughout the course — including assignments, practice problems, notes, and small projects.
-
----
-
-## 📌 About This Repository
-
-This repository is created to:
-- Track my progress 📈
-- Store all assignments and solutions 💡
-- Keep organized notes 📝
-- Practice problem-solving 🧠
-- Build consistency in coding 💻
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Learning-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Language-Python-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Focus-Problem%20Solving-green?style=for-the-badge" />
+</p>
 
 ---
 
-## 🗂️ Repository Structure
+## 🌟 About This Repository
+
+Welcome! This repository documents my journey through **Code in Place 2026**.  
+
+It’s not just code — it’s a reflection of:
+- 📈 Growth over time  
+- 🧠 Problem-solving practice  
+- 💡 Learning by doing  
+- 🔁 Consistency and discipline  
+
+---
+
+## 🧭 Learning Roadmap
