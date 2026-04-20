@@ -1,4 +1,5 @@
-# 🚀 Code in Place 2026 — Repository
+
+<p align="center"> # 🚀 Code in Place 2026 — Repository </p>
 
 <p align="center">
   <b>Stanford Code in Place 2026</b><br/>
