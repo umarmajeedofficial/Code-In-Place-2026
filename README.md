@@ -1,5 +1,5 @@
 <p align="center">
-  <h1>🚀 Code in Place 2026 — Engineering Learning Repository</h1>
+  <h1>🚀 Code in Place 2026 — Solution Repository</h1>
 </p>
 
 <p align="center">
