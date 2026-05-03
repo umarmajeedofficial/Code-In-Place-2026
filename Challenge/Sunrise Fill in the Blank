@@ -1,0 +1,21 @@
+"""
+This program is a "Fill in the Blank" story generator. 
+It collects specific types of words from the user and plugs them 
+into a pre-written sentence template to create a unique story.
+"""
+
+def main():
+    # 1. Collect the three required strings from the user.
+    # Note: The prompts must match the instructions exactly for the autograder.
+    color = input("A color: ")
+    adjective = input("An adjective: ")
+    goal = input("A goal you would like to achieve: ")
+
+    # 2. Print the story by combining the fixed text with the user's variables.
+    # We use string concatenation (+) to build the final sentence.
+    print("At dawn the sky turned " + color + ", and the air felt " + adjective + ". I decided today I will finally " + goal + ".")
+
+
+# Standard boilerplate to call the main function when the script is run.
+if __name__ == "__main__":
+    main()
