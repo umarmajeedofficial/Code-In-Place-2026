@@ -1,0 +1,39 @@
+"""
+This program instructs Karel to place beepers in a square pattern.
+Karel starts at (1, 1), places a beeper at each corner of a 1x1 square,
+and returns to the starting position facing the original direction.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    Karel moves in a counter-clockwise direction, placing a beeper
+    at each of the four corners of a small square.
+    """
+    # Place the first beeper at the starting corner (1, 1)
+    put_beeper()
+    
+    # Move to the next corner, place a beeper, and turn left
+    move()
+    put_beeper()
+    turn_left()
+    
+    # Move up to the next corner, place a beeper, and turn left
+    move()
+    put_beeper()
+    turn_left()
+    
+    # Move to the last corner, place a beeper, and turn left
+    move()
+    put_beeper()
+    turn_left()
+    
+    # Move back to the starting corner and turn left to face East again
+    move()
+    turn_left()
+
+
+# This boilerplate code starts the Karel simulation
+if __name__ == '__main__':
+    main()
