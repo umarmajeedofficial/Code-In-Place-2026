@@ -1,0 +1,25 @@
+"""
+This program simulates rolling a die with a user-specified number of sides.
+It uses the random module to generate a result between 1 and the maximum
+number of sides provided by the user.
+"""
+
+import random
+
+def main():
+    # 1. Ask the user for the number of sides on their die
+    # We convert the input from a string to an integer
+    num_sides = input("How many sides does your dice have? ")
+    num_sides = int(num_sides)
+
+    # 2. Simulate the roll using random.randint
+    # The die can land on any number from 1 up to (and including) num_sides
+    roll = random.randint(1, num_sides)
+
+    # 3. Print the result of the roll
+    print("Your roll is " + str(roll))
+
+
+# Standard boilerplate to call the main function
+if __name__ == '__main__':
+    main()
