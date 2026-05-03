@@ -1,0 +1,19 @@
+"""
+This is a standard "Hello, World!" program in Python.
+It introduces the basic concept of outputting text to the console.
+"""
+
+def main():
+    """
+    The main function serves as the entry point for our logic.
+    In Python, we use the print() function to display text.
+    """
+    # print() is a built-in function that displays whatever is inside the parentheses.
+    # The text is wrapped in "quotation marks" to tell Python it is a string (text).
+    print("Hello, World!")
+
+
+# This conditional block checks if the script is being run directly.
+# If it is, it calls the main() function to execute the code above.
+if __name__ == '__main__':
+    main()
