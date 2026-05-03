@@ -1,0 +1,33 @@
+"""
+This program solves an age-related riddle using variables and basic arithmetic.
+Each person's age is calculated relative to the others and then printed.
+"""
+
+def main():
+    # 1. Anton is 21 years old.
+    anton = 21
+
+    # 2. Beth is 6 years older than Anton.
+    beth = anton + 6
+
+    # 3. Chen is 20 years older than Beth.
+    chen = beth + 20
+
+    # 4. Drew is as old as Chen's age plus Anton's age.
+    drew = chen + anton
+
+    # 5. Ethan is the same age as Chen.
+    ethan = chen
+
+    # 6. Print the results in the required format.
+    # We convert the integers to strings to concatenate them with the names.
+    print("Anton is " + str(anton))
+    print("Beth is " + str(beth))
+    print("Chen is " + str(chen))
+    print("Drew is " + str(drew))
+    print("Ethan is " + str(ethan))
+
+
+# Standard entry point to start the Python execution
+if __name__ == '__main__':
+    main()
