@@ -1,0 +1,91 @@
+"""
+This program instructs Karel to clear a path of beepers. 
+Karel follows a trail of beepers, picking them up one by one, 
+and makes specific turns (navigation) whenever the trail ends 
+at a certain point. It's essentially a "beeper trail cleaner."
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    # --- Segment 1: Clear the first line of beepers ---
+    while beepers_present():
+        pick_beeper()
+        move()
+    # Turn around and step back to the last corner with a beeper to pivot
+    turn_around()
+    move()
+    
+    # --- Segment 2: Turn right and clear the next trail ---
+    turn_right()
+    move()
+    while beepers_present():
+        pick_beeper()
+        move()
+    turn_around()
+    move()
+    
+    # --- Segment 3: Turn right again and clear the next trail ---
+    turn_right()
+    move()
+    turn_right() # Adjusting orientation to find the next part of the trail
+    while beepers_present():
+        pick_beeper()
+        move()
+    turn_around()
+    move()
+    
+    # --- Segment 4: Turn left and continue clearing ---
+    turn_left()
+    move()
+    while beepers_present():
+        pick_beeper()
+        move()
+    turn_around()
+    move()
+    
+    # --- Segment 5: Turn left and continue clearing ---
+    turn_left()
+    move()
+    while beepers_present():
+        pick_beeper()
+        move()
+    turn_around()
+    move()
+    
+    # --- Segment 6: Turn right and continue clearing ---
+    turn_right()
+    move()
+    while beepers_present():
+        pick_beeper()
+        move()
+    turn_around()
+    move()
+    
+    # --- Segment 7: Final segment of the trail ---
+    turn_right()
+    move()
+    while beepers_present():
+        pick_beeper()
+        move()
+    turn_around()
+    move()
+    turn_left()
+    move()
+
+
+def turn_right():
+    """Helper function to turn Karel 270 degrees clockwise."""
+    turn_left()
+    turn_left()
+    turn_left()
+
+
+def turn_around():
+    """Helper function to turn Karel 180 degrees to face the opposite way."""
+    turn_left()
+    turn_left()
+
+# Standard boilerplate to run the Karel program
+if __name__ == '__main__':
+    main()
