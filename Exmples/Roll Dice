@@ -1,0 +1,40 @@
+"""
+File: rolldice.py
+------------------
+This program simulates rolling two separate six-sided dice. 
+It captures each individual result, calculates their sum, 
+and displays all the information to the user.
+"""
+
+# Import the random library to access random number generation functions
+import random
+
+# A constant representing the number of sides on the dice
+NUM_SIDES = 6
+
+def main():
+    """
+    Simulates a single roll of two dice and displays the outcome.
+    """
+    # Setting a seed is useful for debugging (uncomment the line below to do so!)
+    # random.seed(1)
+    
+    # 1. Roll the dice
+    # random.randint(a, b) returns a random integer N such that a <= N <= b
+    die1 = random.randint(1, NUM_SIDES)
+    die2 = random.randint(1, NUM_SIDES)
+    
+    # 2. Calculate the sum of the two individual rolls
+    total = die1 + die2
+    
+    # 3. Print the results to the console
+    print("Dice have", NUM_SIDES, "sides each.")
+    print("First die:", die1)
+    print("Second die:", die2)
+    print("Total of two dice:", total)
+
+
+# This standard Python idiom ensures the main() function is called 
+# only when the script is run directly, not when imported as a module.
+if __name__ == '__main__':
+    main()
