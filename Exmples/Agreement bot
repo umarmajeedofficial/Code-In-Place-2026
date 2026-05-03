@@ -1,0 +1,18 @@
+"""
+This program asks the user for their favorite animal and 
+responds that it shares the same favorite.
+"""
+
+def main():
+    # 1. Ask the user for their favorite animal and store it in a variable
+    # The string inside input() is the prompt shown to the user
+    animal = input("What's your favorite animal? ")
+
+    # 2. Print the response, combining the message with the user's input
+    # We use the variable 'animal' to fill in the blank
+    print("My favorite animal is also " + animal + "!")
+
+
+# The following code ensures the program starts by executing the main function
+if __name__ == '__main__':
+    main()
