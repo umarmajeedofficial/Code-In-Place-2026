@@ -1,0 +1,19 @@
+"""
+This program demonstrates a customizable "Hello World!" by interacting
+with the user. It captures user input and uses it to personalize the output.
+"""
+
+def main():
+    # 1. Prompt the user for their name using input()
+    # The string inside the parentheses is what the user sees.
+    # We store their response in a variable called 'name'.
+    name = input("What is your name? ")
+
+    # 2. Print a personalized greeting
+    # We combine the string "Hello " with the value stored in the 'name' variable.
+    print("Hello " + name)
+
+
+# This standard boilerplate ensures the main function runs when the script starts.
+if __name__ == '__main__':
+    main()
