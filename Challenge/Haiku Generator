@@ -1,0 +1,36 @@
+"""
+This program generates a personalized Haiku using AI.
+It takes a user's name and a topic, then constructs a specific
+prompt for the AI to ensure the 5-7-5 syllable structure is followed.
+"""
+
+from ai import call_gpt
+
+def main():
+    # 1. Collect user information
+    name = input("Enter your name: ")
+    topic = input("Enter a topic: ")
+
+    # 2. Inform the user that the AI is processing the request
+    print("Creating your haiku...")
+    print("")
+
+    # 3. Construct a clear prompt for the AI
+    # We explicitly mention the 5-7-5 syllable rule and ask to include the name.
+    ai_prompt = (
+        f"Write a Haiku about {topic}. "
+        f"The Haiku should include the name '{name}'. "
+        "Remember the structure: Line 1 has 5 syllables, "
+        "Line 2 has 7 syllables, and Line 3 has 5 syllables."
+    )
+
+    # 4. Call the AI and store the result
+    haiku = call_gpt(ai_prompt)
+
+    # 5. Display the finished poem
+    print(haiku)
+
+
+# Standard Python boilerplate to run the main function
+if __name__ == "__main__":
+    main()
