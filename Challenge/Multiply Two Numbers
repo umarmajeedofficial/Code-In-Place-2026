@@ -1,0 +1,31 @@
+"""
+Program: multiply two numbers
+--------------------
+This program asks the user for two integers and prints the 
+value of the first number multiplied with the second.
+"""
+
+def main():
+    # 1. Start by explaining the purpose of the program
+    print("This program multiplies two numbers.")
+    
+    # 2. Ask the user for the first number using the required prompt
+    # Note: input() always returns a string, so we need to convert it
+    num1 = input("Enter first number: ")
+    num1 = int(num1)
+    
+    # 3. Ask the user for the second number using the required prompt
+    num2 = input("Enter second number: ")
+    num2 = int(num2)
+    
+    # 4. Calculate the product using the asterisk (*) operator
+    product = num1 * num2
+    
+    # 5. Print the final result
+    print(product)
+
+
+# This provided line is required at the end of a Python file 
+# to call the main() function and start the program.
+if __name__ == '__main__':
+    main()
