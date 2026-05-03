@@ -1,0 +1,22 @@
+"""
+Karel Example: Rotating in Place
+This program demonstrates how to use a 'for loop' to repeat an action. 
+By turning left four times, Karel will end up facing their original direction.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    The main function contains the logic of the program.
+    Karel will perform a full 360-degree rotation.
+    """
+    # This loop runs 4 times, once for each 90-degree turn
+    for i in range(4):
+        # Karel rotates 90 degrees to the left
+        turn_left()
+
+
+# This standard Python boilerplate starts the Karel execution
+if __name__ == '__main__':
+    main()
