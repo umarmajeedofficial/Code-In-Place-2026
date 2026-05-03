@@ -1,0 +1,27 @@
+"""
+This program simulates flipping a weighted coin.
+Unlike a fair coin (50/50), this coin is designed to land on 
+heads 70% of the time using the random module.
+"""
+
+import random
+
+def main():
+    """
+    To simulate a 70% probability, we generate a random decimal 
+    between 0.0 and 1.0. If the number is less than 0.7, it's Heads.
+    """
+    # random.random() returns a float between 0.0 and 1.0
+    chance = random.random()
+    
+    # Check if the result falls within the 70% threshold (0.0 to 0.7)
+    if chance < 0.7:
+        print("heads")
+    else:
+        # The remaining 30% of the time, it lands on tails
+        print("tails")
+
+
+# Standard boilerplate to run the program
+if __name__ == '__main__':
+    main()
