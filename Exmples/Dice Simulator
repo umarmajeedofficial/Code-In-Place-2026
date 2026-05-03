@@ -1,0 +1,51 @@
+"""
+File: dicesimulator.py
+----------------------
+This program simulates rolling two dice three times. It is specifically designed 
+to demonstrate the concept of "Variable Scope"—showing that variables defined 
+inside one function (like die1 in roll_dice) are independent of variables with 
+the same name in another function (like die1 in main).
+"""
+
+import random
+
+# Global constant: accessible by any function in the program
+NUM_SIDES = 6
+
+def roll_dice():
+    """
+    Simulates rolling two dice and prints their total.
+    The variables 'die1' and 'die2' created here are LOCAL to this function.
+    Changing them here does not affect any variables named 'die1' outside this function.
+    """
+    # Generate random numbers between 1 and NUM_SIDES
+    die1 = random.randint(1, NUM_SIDES)
+    die2 = random.randint(1, NUM_SIDES)
+    total = die1 + die2
+    print("Total of two dice:", total)
+
+def main():
+    """
+    Main execution logic. Demonstrates that the 'die1' variable here
+    stays the same, even though roll_dice() uses its own 'die1' variable internally.
+    """
+    # Optional: random.seed(1) makes the 'random' results predictable for testing/debugging
+    random.seed(1)
+    
+    # This 'die1' is local to main()
+    die1 = 10
+    print("die1 in main() starts as: " + str(die1))
+    
+    # Call the roll_dice function 3 times
+    # Each time this runs, it creates its own temporary 'die1' and 'die2'
+    roll_dice()
+    roll_dice()
+    roll_dice()
+    
+    # After the rolls, main's 'die1' remains 10 because roll_dice() 
+    # cannot see or modify main's local variables.
+    print("die1 in main() is: " + str(die1))
+
+# Standard Python boilerplate to call the main() function
+if __name__ == '__main__':
+    main()
