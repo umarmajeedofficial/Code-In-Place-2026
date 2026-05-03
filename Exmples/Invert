@@ -1,0 +1,62 @@
+"""
+This program demonstrates conditional logic (if/else) and while loops.
+Karel's behavior changes based on whether a beeper is found at the first stop.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    Karel moves forward once to check for a beeper. 
+    If a beeper is there, Karel performs a specific sequence of picking and placing.
+    If no beeper is there, Karel fills the entire row with beepers.
+    """
+    # Step 1: Move to the first position to check for a beeper
+    move()
+    
+    # Check if there is a beeper at the current location
+    if beepers_present():
+        # --- Scenario A: Beeper is found ---
+        pick_beeper()   # Take the beeper
+        turn_around()   # Face the starting point
+        move()          # Return to start
+        put_beeper()    # Place beeper at start
+        turn_around()   # Face forward again
+        
+        # Move forward and distribute beepers at specific intervals
+        move()
+        move()
+        put_beeper()
+        move()
+        put_beeper()
+        
+        # Clean up: Pick up beepers at the end of the sequence
+        move()
+        pick_beeper()
+        move()
+        pick_beeper()
+        
+    else:
+        # --- Scenario B: No beeper is found ---
+        # Turn around and back to ensure we start at the beginning of the row
+        turn_around()
+        move()
+        turn_around()
+        
+        # Use a while loop to place a beeper on every corner until a wall is hit
+        while front_is_clear():
+            put_beeper()
+            move()
+        # Place the final beeper at the very last corner
+        put_beeper()
+
+def turn_around():
+    """
+    Helper function to make Karel turn 180 degrees.
+    """
+    turn_left()
+    turn_left()
+
+# Boilerplate code to run the Karel program
+if __name__ == '__main__':
+    main()
