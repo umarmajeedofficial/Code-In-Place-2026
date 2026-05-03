@@ -1,0 +1,33 @@
+"""
+This program, 'add2numbers', demonstrates how to collect numerical input,
+perform basic arithmetic, and handle data type conversions in Python.
+"""
+
+def main():
+    # 1. Display a message to explain the purpose of the program
+    print("This program adds two numbers.")
+    
+    # 2. Prompt the user for the first input
+    # input() always returns data as a string (text)
+    num1 = input("Enter first number: ")
+    
+    # 3. Convert the string input into an integer (a whole number)
+    # This is necessary to perform mathematical addition
+    num1 = int(num1)
+    
+    # 4. Prompt the user for the second input and convert it immediately
+    num2 = input("Enter second number: ")
+    num2 = int(num2)
+    
+    # 5. Add the two integers together and store the result in 'total'
+    total = num1 + num2
+    
+    # 6. Display the result
+    # We use str(total) to convert the number back to text so it can 
+    # be combined (concatenated) with the other strings
+    print("The total is " + str(total) + ".")
+
+
+# This standard boilerplate ensures the program begins at the main() function
+if __name__ == '__main__':
+    main()
