@@ -1,0 +1,83 @@
+"""
+This program instructs Karel to climb up to different "levels" or "lines"
+to plant beeper flowers. Karel identifies an opening to the next level, 
+places a square beeper flower, and then returns to the base to continue.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    Main execution: Karel places two flowers on different levels
+    and then moves forward until the final wall is reached.
+    """
+    # Execute the sequence to find a gap and plant a flower twice
+    make_flower_go_next_line()
+    make_flower_go_next_line()
+    
+    # After planting, move forward to the end of the current row
+    while front_is_clear():
+        move()
+
+
+def make_flower_go_next_line():
+    """
+    Finds a gap in the ceiling, moves up to the next row, 
+    plants a beeper flower, and returns to the lower level.
+    """
+    # 1. Move to the wall or the end of the current corridor
+    while front_is_clear():
+        move()
+    
+    # 2. Turn left to look for a gap in the "ceiling" (the right wall)
+    turn_left()
+    # Move up as long as there is a wall to the right
+    while right_is_blocked():
+        move()
+    
+    # 3. Gap found! Turn right to enter the next level and plant the flower
+    turn_right()
+    make_flower()
+    
+    # 4. Move past the flower and turn back down to return to the base line
+    move()
+    turn_right()
+    while front_is_clear():
+        move()
+    
+    # 5. Face East again to prepare for the next command
+    turn_left()
+
+
+def make_flower():
+    """
+    Creates a 1x1 square of beepers. 
+    Karel ends up in the same position and orientation as when they started.
+    """
+    put_beeper()
+    move()
+    put_beeper()
+    turn_left()
+    move()
+    put_beeper()
+    turn_left()
+    move()
+    put_beeper()
+    # Reset orientation to face the original direction
+    turn_left()
+    move()
+    turn_left()
+
+
+def turn_right():
+    """
+    Standard helper function to turn Karel 270 degrees to the right.
+    """
+    turn_left()
+    turn_left()
+    turn_left()
+
+
+# Entry point for the program
+if __name__ == '__main__':
+    main()
