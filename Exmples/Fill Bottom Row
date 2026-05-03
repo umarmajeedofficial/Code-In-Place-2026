@@ -1,0 +1,29 @@
+"""
+This program demonstrates a "Fencepost Pattern."
+Karel will place one beeper on every corner of the current row,
+starting from the first corner and ending at the wall.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    Karel fills a row with a single line of beepers.
+    To avoid missing the first or last corner, we place a beeper 
+    before starting the movement loop.
+    """
+    # Place the "first post": Put a beeper at the starting position (1, 1)
+    put_beeper()
+
+    # Continue moving as long as there is an empty space ahead
+    while front_is_clear():
+        # Move to the next available corner
+        move()
+        
+        # Place a beeper at the new corner
+        put_beeper()
+
+
+# This standard Python boilerplate starts the Karel execution
+if __name__ == '__main__':
+    main()
