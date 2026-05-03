@@ -1,0 +1,118 @@
+"""
+This program instructs Karel to fill the entire world with beepers in a 
+checkerboard-style pattern (alternating rows). It handles moving row by row, 
+filling them, and returning to the origin (1, 1) once the task is complete.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    Main loop that continues as long as there is another row above to fill.
+    It alternates between two types of row patterns (row1 and row2).
+    """
+    while left_is_clear():
+        row1()
+        row2()
+    # After the loop, check if the very last line of the world was filled
+    check_last_line()
+
+def check_last_line():
+    """
+    Ensures the final row is processed if the main loop finished early, 
+    then sends Karel back to the starting corner.
+    """
+    turn_right()
+    move()
+    # If the corner above the last row is empty, process the final row
+    if no_beepers_present():
+        turn_left()
+        turn_left()
+        move()
+        turn_right()
+        row1()
+        move_to_start()
+        go_back_to_origan()
+    else:
+        # Otherwise, just head home
+        turn_left()
+        go_back_to_origan()
+
+def go_back_to_origan():
+    """
+    Navigates Karel from the top of the world back to (1, 1) facing East.
+    """
+    turn_right()
+    while front_is_clear():
+        move()
+    turn_left()
+    while front_is_clear():
+        move()
+
+def row1():
+    """
+    Fills a row starting with a beeper at the first position, 
+    placing beepers every two spaces.
+    """
+    put_beeper()
+    while front_is_clear():
+        if front_is_clear():
+            move()
+        if front_is_clear():
+            move()
+            put_beeper()
+    move_to_start()
+    go_above_line()
+
+def row2():
+    """
+    Fills a row starting with a gap, placing the first beeper 
+    at the second position, then every two spaces.
+    """
+    if front_is_clear():
+        move()
+        put_beeper()
+    while front_is_clear():
+        if front_is_clear():
+            move()
+        if front_is_clear():
+            move()
+            put_beeper()
+    move_to_start()
+    go_above_line()
+
+def go_above_line():
+    """
+    Moves Karel up one row to prepare for the next line.
+    """
+    if left_is_clear():
+        turn_left()
+        move()
+        turn_right()
+
+def turn_right():
+    """
+    Helper function to turn Karel 270 degrees to the right.
+    """
+    turn_left()
+    turn_left()
+    turn_left()
+
+def move_to_start():
+    """
+    Moves Karel back to the beginning of the current row (the West wall).
+    """
+    turn_around()
+    while front_is_clear():
+        move()
+    turn_around()
+
+def turn_around():
+    """
+    Helper function to make Karel face the opposite direction.
+    """
+    turn_left()
+    turn_left()
+
+if __name__ == '__main__':
+    main()
