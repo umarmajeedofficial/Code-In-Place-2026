@@ -1,0 +1,87 @@
+"""
+This program directs Karel to navigate along the edges of the world. 
+It uses 'while front_is_clear' loops to move until a wall is hit, 
+making the code adaptable to different world sizes.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    # --- Phase 1: Move to the far East wall ---
+    while front_is_clear():
+        move()
+    
+    # --- Phase 2: Face North and move to the North-East corner ---
+    turn_left()
+    while front_is_clear():
+        move()
+    
+    # --- Phase 3: Face West and move to the North-West corner ---
+    turn_left()
+    while front_is_clear():
+        move()
+    
+    # --- Phase 4: Face South (three lefts = turn right) ---
+    turn_left()
+    turn_left()
+    turn_left()
+    while front_is_clear():
+        move()
+    
+    # --- Phase 5: Face West again (three lefts = turn right) ---
+    turn_left()
+    turn_left()
+    turn_left()
+    
+    # Logic Branch: Determine how to finish based on space available
+    if front_is_clear():
+        # If there is room to move forward, continue until the wall
+        while front_is_clear():
+            move()
+    else:
+        # --- Phase 6: Complex recovery/maneuvering ---
+        # Turn 180 degrees (face East)
+        turn_left()
+        turn_left()
+        while front_is_clear():
+            move()
+            
+        # Face North and move to the top wall
+        turn_left()
+        while front_is_clear():
+            move()
+            
+        # Face East (three lefts = turn right) and take one step
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+        
+        # Face South and move to the bottom wall
+        turn_left()
+        turn_left()
+        turn_left()
+        while front_is_clear():
+            move()
+            
+        # Face West and move to the far wall
+        turn_left()
+        turn_left()
+        turn_left()
+        while front_is_clear():
+            move()
+            
+        # Face North, take one step, face East, and take one final step
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+        turn_left()
+        turn_left()
+        turn_left()
+        move()
+
+
+# Standard entry point to start the Karel program
+if __name__ == '__main__':
+    main()
