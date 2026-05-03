@@ -1,0 +1,32 @@
+"""
+This program demonstrates how to use nested loops to place stacks of items.
+Karel will place a stack of 10 beepers on every single corner along a row
+until a wall is reached.
+"""
+
+from karel.stanfordkarel import *
+
+def main():
+    """
+    Karel fills the entire row with stacks of 10 beepers.
+    It handles the first corner separately, then moves across the row.
+    """
+    
+    # 1. Place 10 beepers at the starting corner (1, 1)
+    # We use a 'for' loop because we know exactly how many beepers to place (10).
+    for i in range(10):
+        put_beeper()
+
+    # 2. Move across the row and place stacks of 10 on each subsequent corner
+    # The 'while' loop ensures Karel keeps going until it hits a wall.
+    while front_is_clear():
+        move()  # Advance to the next corner
+        
+        # This nested 'for' loop places 10 beepers at the current corner.
+        for i in range(10):
+            put_beeper()
+
+
+# The standard entry point for running the Karel program
+if __name__ == '__main__':
+    main()
