@@ -1,0 +1,19 @@
+# The affirmation we want the user to type correctly
+AFFIRMATION = "I am capable of doing anything I put my mind to."
+
+# Ask user for the first attempt
+print(f"Please type the following affirmation: {AFFIRMATION}")
+user_input = input()
+
+# Keep looping until the user types it correctly
+while user_input != AFFIRMATION:
+
+    # If incorrect, show message
+    print("That was not the affirmation.")
+
+    # Ask again (no prompt inside input as required)
+    print(f"Please type the following affirmation: {AFFIRMATION}")
+    user_input = input()
+
+# If loop ends, the user got it correct
+print("That's right! :)")
