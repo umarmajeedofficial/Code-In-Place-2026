@@ -1,0 +1,11 @@
+# Minimum height required to ride
+MIN_HEIGHT = 50
+
+# Ask user once for their height
+height = int(input("How tall are you? "))
+
+# Check if the height is enough
+if height >= MIN_HEIGHT:
+    print("You're tall enough to ride!")
+else:
+    print("You're not tall enough to ride, but maybe next year!")
