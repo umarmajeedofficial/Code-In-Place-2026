@@ -1,0 +1,5 @@
+# Loop from 1 to 10 (inclusive)
+for i in range(1, 11):
+
+    # Print the current number in the sequence
+    print(i)
