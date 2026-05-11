@@ -1,0 +1,8 @@
+# Loop runs 10 times
+for i in range(10):
+
+    # Print countdown number from 10 to 1
+    print(10 - i)
+
+# After countdown is complete, print Liftoff!
+print("Liftoff!")
