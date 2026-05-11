@@ -1,0 +1,19 @@
+# Read an integer input from the user
+n = int(input("Enter a number: "))
+
+# Continue until the number becomes 1
+while n != 1:
+
+    # Check if the number is even
+    if n % 2 == 0:
+
+        # Even case: divide by 2
+        new_n = n // 2  # integer division ensures result stays an integer
+        print(f"{n} is even, so I take half: {new_n}")
+        n = new_n
+
+    else:
+        # Odd case: multiply by 3 and add 1
+        new_n = 3 * n + 1
+        print(f"{n} is odd, so I make 3n + 1: {new_n}")
+        n = new_n
