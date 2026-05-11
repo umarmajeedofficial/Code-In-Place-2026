@@ -1,0 +1,12 @@
+# We want the first 20 even numbers.
+# Even numbers follow the pattern: 0, 2, 4, 6, ...
+# So for any index i, the even number is 2 * i
+
+# Loop 20 times (from 0 to 19)
+for i in range(20):
+
+    # Compute the even number
+    even_number = 2 * i
+
+    # Print it
+    print(even_number)
