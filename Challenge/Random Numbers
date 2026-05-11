@@ -1,0 +1,11 @@
+# Import random module so we can generate random numbers
+import random
+
+# Loop runs 10 times
+for i in range(10):
+
+    # Generate a random number between 1 and 100
+    number = random.randint(1, 100)
+
+    # Print the random number
+    print(number)
